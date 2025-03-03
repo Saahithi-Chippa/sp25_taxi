@@ -15,7 +15,7 @@ import pandas as pd
 import pytz
 import requests
 
-from config import RAW_DATA_DIR
+from src.config import RAW_DATA_DIR
 
 
 def fetch_raw_trip_data(year: int, month: int) -> Path:
