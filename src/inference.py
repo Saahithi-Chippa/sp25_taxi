@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 from hsfs.feature_store import FeatureStore
 
-import config as config
-from data_utils import transform_ts_data_info_features
+import src.config as config
+from src.data_utils import transform_ts_data_info_features
 
 
 def get_hopsworks_project() -> hopsworks.project.Project:
@@ -65,7 +65,7 @@ def load_model_from_registry(version=None):
 
     import joblib
 
-    from pipeline_utils import (  # Import custom classes/functions
+    from src.pipeline_utils import (  # Import custom classes/functions
         TemporalFeatureEngineer,
         average_rides_last_4_weeks,
     )
