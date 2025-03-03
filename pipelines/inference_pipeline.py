@@ -12,7 +12,7 @@ from src.inference import (
 #Get the current datetime64[us, Etc/UTC]
 # for number in range(22, 24*29)
 # current_date = pd.Timestamp.now(tz="Etc/UTC") - timedelta(hours=number)
-current_date = pd.Timestamp.now(tz="Etc/UTC")
+current_date = pd.Timestamp.now(tz="US/Eastern")
 feature_store = get_feature_store()
 
 #read time-series data from the feature store
