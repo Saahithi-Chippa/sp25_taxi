@@ -2,8 +2,8 @@ from datetime import datetime, timedelta
 
 import pandas as pd
 
-import src.config as config
-from src.inference import (
+import config as config
+from inference import (
     get_feature_store,
     get_model_predictions,
     load_model_from_registry
@@ -31,7 +31,7 @@ ts_data = ts_data[ts_data.pickup_hour.between(fetch_data_from, fetch_data_to)]
 ts_data.sort_values(["pickup_location_id", "pickup_hour"]).reset_index(drop = True)
 ts_data["pickup_hour"] = ts_data["pickup_hour"].dt.tz_localize(None)
 
-from src.data_utils import transform_ts_data_info_features
+from data_utils import transform_ts_data_info_features
 
 features = transform_ts_data_info_features(ts_data, window_size = 24*28, step_size = 23)
 
