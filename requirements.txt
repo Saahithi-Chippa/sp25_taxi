@@ -1,4 +1,5 @@
 confluent-kafka
+distutils
 folium
 geopandas
 hopsworks==4.0.1
@@ -16,7 +17,7 @@ requests
 scikit-learn==1.5.2
 seaborn
 streamlit
-distutils
 setuptools
 streamlit-folium
 xgboost
+wheel
