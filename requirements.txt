@@ -1,5 +1,4 @@
 confluent-kafka
-distutils
 folium
 geopandas
 hopsworks==4.0.1
