@@ -262,6 +262,10 @@ progress_bar = st.sidebar.progress(0)
 N_STEPS = 4
 
 taxi_zone_lookup = pd.read_csv(download_taxi_zone_lookup_csv(DATA_DIR))
+# Dropdown to select a location
+selected_zone = st.sidebar.selectbox(
+    "Select a location:", taxi_zone_lookup["Zone"].dropna().unique()
+)
 
 with st.spinner(text="Download shape file for taxi zones"):
     geo_df = load_shape_data_file(DATA_DIR)
@@ -278,15 +282,31 @@ with st.spinner(text="Fetching batch of inference data"):
 with st.spinner(text="Fetching predictions"):
     predictions = fetch_next_hour_predictions()
     predictions = predictions.merge(
-    taxi_zone_lookup[['location_id', 'zone']], 
+    taxi_zone_lookup[['Zone']], 
     left_on="pickup_location_id", 
-    right_on="location_id", 
+    right_on="LocationID", 
     how="left"
     )
     st.sidebar.write("Model was loaded from the registry")
     progress_bar.progress(3 / N_STEPS)
 
 shapefile_path = DATA_DIR / "taxi_zones" / "taxi_zones.shp"
+
+
+
+# Filter predictions and features for the selected location
+selected_location_id = predictions[predictions["Zone"] == selected_zone][
+    "pickup_location_id"
+].iloc[0]
+
+selected_features = features[features["pickup_location_id"] == selected_location_id]
+selected_prediction = predictions[
+    predictions["pickup_location_id"] == selected_location_id
+]
+
+# Plot the prediction for the selected location
+fig = plot_prediction(features=selected_features, prediction=selected_prediction)
+st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
 with st.spinner(text="Plot predicted rides demand"):
     # predictions_df = visualize_predicted_demand(
@@ -334,3 +354,5 @@ for location_id in top10:
         prediction=predictions[predictions["pickup_location_id"] == location_id],
     )
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+
+
