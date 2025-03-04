@@ -11,6 +11,9 @@ jobs:
   run-python-script:
     runs-on: ubuntu-latest
 
+    env:
+      ENABLE_FLYINGDUCK: false  # Disables ArrowFlight
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
