@@ -1,7 +1,7 @@
 confluent-kafka
 folium
 geopandas
-hopsworks==3.5.0rc1
+hopsworks==4.0.1
 ipywidgets
 lightgbm
 matplotlib
