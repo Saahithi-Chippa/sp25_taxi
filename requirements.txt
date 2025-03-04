@@ -10,7 +10,7 @@ notebook
 numpy==1.23.5
 pandas
 plotly
-pyarrow=19.0.0
+pyarrow==19.0.0
 python-dotenv
 requests
 scikit-learn==1.5.2
