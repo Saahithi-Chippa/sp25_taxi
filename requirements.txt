@@ -1,13 +1,13 @@
 confluent-kafka
 folium
 geopandas
-hopsworks
+hopsworks==3.5.0
 ipywidgets
 lightgbm
 matplotlib
 mlflow
 notebook
-numpy==1.23.5
+numpy<1.24
 pandas
 plotly
 pyarrow==19.0.1
