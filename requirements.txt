@@ -17,5 +17,6 @@ scikit-learn==1.5.2
 seaborn
 streamlit
 distutils
+setuptools
 streamlit-folium
 xgboost
