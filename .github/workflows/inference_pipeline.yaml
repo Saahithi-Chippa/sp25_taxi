@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # pip install -r requirements.txt # Install dependencies if a requirements file exists
+          pip install -r requirements.txt # Install dependencies if a requirements file exists
 
         env:
           ENABLE_FLYINGDUCK: false  # Disables ArrowFlight
