@@ -3,11 +3,12 @@ folium
 geopandas
 hopsworks==4.1.8
 ipywidgets
+joblib
 lightgbm
 matplotlib
 mlflow
 notebook
-numpy==1.23.5
+numpy==1.24.4
 pandas
 plotly
 pyarrow==19.0.1
