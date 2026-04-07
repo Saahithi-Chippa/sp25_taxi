@@ -134,7 +134,7 @@ with tab1:
     next_hour_str = next_hour.strftime("%Y-%m-%d %H:%M:%S")
 
     # Athena setup
-    s3_output = 's3://schippa-etl-b06fa59f-6b95-4049-acc2-2ab9390442ba/athena/'
+    s3_output = 's3://s3_bucket_name/athena/'
 
     # Queries
     actual_query = f"""
@@ -275,10 +275,10 @@ with tab2:
     import sqlalchemy
     from sqlalchemy import create_engine, text
 
-    rds_host = "taxi-data.cqjwioo089rz.us-east-1.rds.amazonaws.com"
+    rds_host = "rds_host_name"
     rds_db = "postgres"
     rds_user = "taxiuser"
-    rds_password = "PandaTeddy-57"
+    rds_password = "ur_password_here"
     rds_port = 5432
 
     # Create engine
