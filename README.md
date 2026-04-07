@@ -141,45 +141,40 @@ Train → Predict → Store predictions → Visualize
 ## Repo Structure
 
 ```
-nyc-taxi-demand-forecast/
-│
-├── notebooks/
-│   ├── 01_fetch_raw_data.ipynb
-│   ├── 02_filter_data.ipynb
-│   ├── 03_transform_data.ipynb
-│   ├── 04_feature_engineering.ipynb
-│   ├── 05_model_training.ipynb
-│   ├── 06_inference.ipynb
-│   └── 07_monitoring.ipynb
-│
-├── src/
-│   ├── feature_pipeline.py
-│   ├── training_pipeline.py
-│   ├── inference_pipeline.py
-│   ├── monitoring.py
-│   └── utils/
-│       ├── data_utils.py
-│       ├── model_utils.py
-│       └── plot_utils.py
-│
-├── frontend/
-│   └── app.py                      # Streamlit dashboard (Phases 1 to 3)
-│
-├── snowflake/
-│   ├── upload_data.py              # Upload CSVs to Snowflake stage
-│   ├── filter_data.py              # Snowpark filtering script
-│   ├── transform_data.py           # Snowpark transformation script
-│   └── train_predict.py            # Connect from Colab, push predictions
-│
-├── .github/
-│   └── workflows/
-│       ├── feature_pipeline.yml    # Scheduled feature ingestion
-│       └── inference_pipeline.yml  # Hourly prediction job
-│
-├── docker-compose.yml              # Local dev container (Ubuntu 24.04 LTS)
-├── requirements.txt                # Packages without versions (for dev)
-├── requirements_with_versions.txt  # Pinned versions (for deployment)
-├── .env.sample                     # Credentials template
+sp25_taxi/
+├── Phase_1/
+│    ├── notebooks/
+│    │   ├── 01_fetch_raw_data.ipynb
+│    │   ├── 02_filter_data.ipynb
+│    │   ├── 03_transform_data.ipynb
+│    │   ├── 04_feature_engineering.ipynb
+│    │   ├── 05_model_training.ipynb
+│    │   ├── 06_inference.ipynb
+│    │   └── 07_monitoring.ipynb
+│    ├── src/
+│    │    ├── feature_pipeline.py
+│    │    ├── training_pipeline.py
+│    │    ├── inference_pipeline.py
+│    │    ├── monitoring.py
+│    │    └── utils/
+│    │        ├── data_utils.py
+│    │        ├── model_utils.py
+│    │        └── plot_utils.py
+│    ├── frontend/
+│    │    └── app.py                      # Streamlit dashboard (Phases 1 to 3)
+│    ├── .github/
+│    │    └── workflows/
+│    │        ├── feature_pipeline.yaml    # Scheduled feature ingestion
+│    │        ├── inference_pipeline.yaml    # Hourly prediction job
+│    │        └── model_training_pipeline.yaml   #Monthly model training pipeline
+│    ├── docker-compose.yml              # Local dev container (Ubuntu 24.04 LTS)
+│    ├── requirements.txt                # Packages without versions (for dev)
+│    ├── requirements_with_versions.txt  # Pinned versions (for deployment)
+│    ├── .env.sample                     # Credentials template
+├── Phase_2_3/
+│    ├── notebooks/          #notebooks used in Phase 2 & 3 of the project
+│    ├── Streamlit app/      #Streamlit app code and Predictions from the models
+│    ├── NYC_Taxi_Data.pbix   #PowerBI Dashboard for NYC Taxi data
 └── README.md
 ```
 
