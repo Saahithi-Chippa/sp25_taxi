@@ -149,13 +149,11 @@ sp25_taxi/
 │    │   ├── 03_transform_data.ipynb
 │    │   ├── 04_feature_engineering.ipynb
 │    │   ├── 05_model_training.ipynb
-│    │   ├── 06_inference.ipynb
-│    │   └── 07_monitoring.ipynb
+│    │   └──06_inference.ipynb
 │    ├── src/
 │    │    ├── feature_pipeline.py
 │    │    ├── training_pipeline.py
 │    │    ├── inference_pipeline.py
-│    │    ├── monitoring.py
 │    │    └── utils/
 │    │        ├── data_utils.py
 │    │        ├── model_utils.py
